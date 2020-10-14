@@ -20,13 +20,6 @@ stages:
     pool:
       vmImage: 'ubuntu-latest'
     steps:
-    - bash: pwd;ls
+    - bash: docker build --target build -t hlbuildimage -f .devcontainer/Dockerfile . &&  docker run --name hlbuildcontainer hlbuildimage
       displayName: Look around for debug
-    - task: Docker@2
-      displayName: Build an image
-      inputs:
-        command: build
-        dockerfile: '$(Build.SourcesDirectory)/.devcontainer/Dockerfile'
-        workingDirectory: '$((Build.SourcesDirectory)'
-        tags: |
-          $(tag)
+
