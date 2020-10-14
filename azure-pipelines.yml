@@ -27,5 +27,6 @@ stages:
       inputs:
         command: build
         dockerfile: '$(Build.SourcesDirectory)/.devcontainer/Dockerfile'
+        workingDirectory: '$((Build.SourcesDirectory)'
         tags: |
           $(tag)
