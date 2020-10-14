@@ -25,6 +25,5 @@ stages:
     - task: PublishBuildArtifacts@1
       displayName: 'Publish AzureSphereBlink imagepackage'
       inputs:
-        PathtoPublish: '$(Build.ArtifactStagingDirectory)/HLOutput/AzureSphereBlink.imagepackage' 
-        ArtifactName: 'AzureSphereBlink imagepackage' 
-
+        PathtoPublish: '$(Build.ArtifactStagingDirectory)/HLOutput/AzureSphereBlink.imagepackage' 
+        ArtifactName: 'AzureSphereBlink imagepackage'
