@@ -22,8 +22,9 @@ stages:
     steps:
     - bash: docker build --target build -t hlbuildimage -f .devcontainer/Dockerfile . &&  docker run --name hlbuildcontainer hlbuildimage && docker cp hlbuildcontainer:/out $(Build.ArtifactStagingDirectory)/HLOutput
       displayName: Build high-level Azure Sphere application in a container and copy the output 
-- task: PublishBuildArtifacts@1
-  inputs:
-    PathtoPublish: '$(Build.ArtifactStagingDirectory)/HLOutput/AzureSphereBlink.imagepackage'
-    ArtifactName: 'AzureSphereBlink.imagepackage'
-    publishLocation: 'Container'
+    - task: PublishBuildArtifacts@1
+      displayName: Publish build artifacts
+      inputs:
+        PathtoPublish: '$(Build.ArtifactStagingDirectory)/HLOutput/AzureSphereBlink.imagepackage'
+        ArtifactName: 'AzureSphereBlink.imagepackage'
+        publishLocation: 'Container'
