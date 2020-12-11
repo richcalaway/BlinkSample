@@ -1,6 +1,6 @@
 # This is a basic workflow to help you get started with Actions
 
-name: CI
+name: ContinuousIntegration
 
 # Controls when the action will run. Triggers the workflow on push or pull request
 # events, or when manually requested
@@ -27,4 +27,4 @@ jobs:
       uses: actions/upload-artifact@v2
       with:
         name: HL imagepackage
-        path: ${{ github.workspace }}/HLOutput/AzureSphereBlink.imagepackage
+        path: ${{ github.workspace }}/HLOutput/BlinkSample.imagepackage
